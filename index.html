@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSINE Lab – IIT Indore</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: white;
+      border-bottom: 2px solid #003366;
+    }
+
+    header img {
+      height: 140px;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+    }
+
+    .slider-news-container {
+      display: flex;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin-top: 1px;
+    }
+
+    .slider {
+      flex: 0 0 50%;
+      position: relative;
+      height: 360px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;}
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      max-height: 320px;
+      object-fit: cover;
+      
+    }
+
+    .active {
+      display: block;
+      position: relative;
+    }
+
+    .slide-description {
+      font-size: 14px;
+      font-style: italic;
+      padding: 10px;
+      background-color: white;
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      z-index: 2;
+    }
+
+    .slider-buttons button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .news {
+      flex: 1;
+      padding: 1px 20px;
+      background-color: #f5faff;
+      font-size: 16px;
+    }
+
+    .news ul {
+      padding-left: 20px;
+      font-size: 18px;
+    }
+
+    .content {
+      padding: 1px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 0;
+      width: 100%;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1px;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 1px;
+      font-size: 16px;
+    }
+      @media (max-width: 768px) {
+      .slider-news-container {
+        flex-direction: column;
+      }
+      .slider, .news {
+        flex: 1 1 100%;
+        height: auto;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img {
+        height: 100px;
+        margin: 10px 0;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script>
+    let slideIndex = 0;
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      slideIndex = (n + slides.length) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlides(slideIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlides(slideIndex - 1);
+    }
+
+    function autoSlide() {
+      nextSlide();
+      setTimeout(autoSlide, 5000);
+    }
+
+    window.onload = function () {
+      showSlides(slideIndex);
+      setTimeout(autoSlide, 5000);
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="photos/COSINE_logo.png" alt="COSINE Lab Logo">
+    <img src="photos/IIT_Indore_logo.png" alt="IIT Indore Logo">
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="members.html">Members</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="join.html">Join Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="slider-news-container">
+      <div class="slider">
+        <div class="slide active">
+          <img src="photos/iitindore_join.png" alt="News Image 1">
+          <div class="slide-description">Dr. Ayush Tripathi joins EE, IIT Indore as Assistant Professor</div>
+        </div>
+        <div class="slide">
+          <img src="photos/BCH_dataset_paper.png" alt="News Image 2">
+          <div class="slide-description">Paper accepted in SLEEP</div>
+        </div>
+        <div class="slide">
+          <img src="photos/bidmcquit.png" alt="News Image 3">
+          <div class="slide-description">Dr. Ayush Tripathi's last day at BIDMC</div>
+        </div>
+        <div class="slider-buttons">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+      </div>
+      <div class="news">
+        <h2>Recent News</h2>
+        <ul>
+          <li>1 Sept 2025: COSINE Lab is born.</li>
+          <li>1 Sept 2025: Dr. Ayush Tripathi joins EE, IIT Indore as Assistant Professor.</li>
+          <li>"The Boston Children’s Hospital Sleep Study Corpus: A collection of 15,695 Annotated Pediatric Polysomnograms" is accepted in SLEEP.</li>
+          <li>"Automated Analysis of the AASM Inter-Scorer Reliability Gold Standard Polysomnogram Dataset" is accepted in Journal of Clinical Sleep Medicine.</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="content" id="home">
+      <h1>Welcome to COSINE Lab</h1>
+      <p>The COmputational Signal INformatics and Exploration (COSINE) Lab at IIT Indore develops cutting-edge AI and signal-processing methods to decode and understand complex biomedical and natural signals. Our research spans brain–computer interfaces, human–machine interfaces, automated sleep analysis, clinical EEG analysis, and pathological speech processing. We aim to bridge the gap between artificial intelligence research and real-world healthcare impact through collaborative science and open innovation.</p>
+    </div>
+  </div>
+
+  <footer>
+  <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px 30px; font-size: 18px;">
+    <div class="footer-section">
+      <h3>COSINE Lab</h3>
+      <p>"Learning useful patterns from real-world signals"</p>
+    </div>
+    <div class="footer-section">
+      <h3>Address</h3>
+      <p>Room 318B, Pod 1A <br> IIT Indore, Simrol Campus<br>Indore, Madhya Pradesh, India<br>Pin Code – 453552<br></p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: ayush.tripathi@iiti.ac.in</p>
+    </div>
+   
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research – COSINE Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 0;
+      width: 100%;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1px;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 1px;
+      font-size: 16px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: white;
+      border-bottom: 2px solid #003366;
+    }
+
+    header img {
+      height: 140px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img {
+        height: 100px;
+        margin: 10px 0;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="photos/COSINE_logo.png" alt="COSINE Lab Logo" style="height: 140px;">
+    <img src="photos/IIT_Indore_logo.png" alt="IIT Indore Logo" style="height: 140px; float: right;">
+  </header>
+  <nav style="background-color: #003366; text-align: center; padding: 10px 0;">
+    <a href="index.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="research.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Research</a>
+    <a href="publications.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Publications</a>
+    <a href="members.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Members</a>
+    <a href="teaching.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Teaching</a>
+    <a href="join.html" style="color: white; padding: 14px 20px; text-decoration: none; font-weight: bold;">Join Us</a>
+  </nav>
+
+  <div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+    <h1>Research Areas</h1>
+
+    <!-- Intro paragraph (kept minimal; no CSS changes) -->
+    <p style="font-size:16px; line-height:1.7; margin:0 0 18px;">
+      The <strong>COmputational Signal INformatics and Exploration (COSINE) Lab</strong> develops cutting-edge AI and signal-processing methods to decode and understand complex biomedical and natural signals. Our research spans brain–computer interfaces, human–machine interfaces, automated sleep analysis, clinical EEG analysis, and pathological speech processing. We aim to bridge the gap between artificial intelligence research and real-world healthcare impact through collaborative science and open innovation.
+
+
+    </p>
+
+    <h2>Focus Themes</h2>
+    <!-- Dynamic grid target -->
+    <div id="areasGrid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;"></div>
+  </div>
+
+  <footer>
+  <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px 30px; font-size: 18px;">
+    <div class="footer-section">
+      <h3>COSINE Lab</h3>
+      <p>"Learning useful patterns from real-world signals"</p>
+    </div>
+    <div class="footer-section">
+      <h3>Address</h3>
+      <p>Room 318B, Pod 1A <br> IIT Indore, Simrol Campus<br>Indore, Madhya Pradesh, India<br>Pin Code – 453552<br></p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: ayush.tripathi@iiti.ac.in</p>
+    </div>
+   
+  </div>
+</footer>
+
+  <script>
+    // ==== EDIT THIS ARRAY ONLY to add/remove research areas ====
+    const areas = [
+      
+      {
+        title: "Human–Computer Interfaces (HCI)",
+        desc: "Developing alternative interaction methods and assistive interfaces suitable for wearable devices.",
+        items: [
+          "Multimodal air-writing recognition using IMU and EMG sensors",
+          "Robust gesture recognition for intuitive control",
+          "Models designed to generalize across different users"
+        ]
+      },
+      {
+        title: "Brain–Computer Interfaces (BCI)",
+        desc: "Designing non-invasive neural interfaces for communication and control.",
+        items: [
+          "EEG-based decoding of motor imagery and cognitive states",
+          "Real-time signal processing with deep-learning models",
+          "Applications in assistive communication and neuro-rehabilitation"
+        ]
+      },
+      {
+        title: "EEG Biomarkers for Neurological Disorders",
+        desc: "Developing EEG-based features and models to detect and monitor neurological diseases.",
+        items: [
+          "Spectral power and sleep micro-events (spindles, slow waves)",
+          "Functional connectivity and network graph measures",
+          "Interpretable deep-learning models for tracking disease risk and progression"
+        ]
+      },
+      {
+        title: "Polysomnography Analysis",
+        desc: "Exploring Tools for Robust Automated Sleep Analysis",
+        items: [
+          "Sleep staging: automatic 5-, 4-, or 3-class scoring (Wake, N1, N2, N3, REM)",
+          "Event detection: arousals, breathing-related events (central, obstructive, mixed apneas; hypopneas; RERA), and limb movements",
+          "Neurological links: studying how neurological disorders affect sleep patterns",
+          "Biomarkers: exploring disturbed sleep as an early indicator of disease"
+        ]
+      },
+      {
+        title: "Pathological Speech Processing",
+        desc: "Objective analysis of disordered speech to support clinical assessment and therapy.",
+        items: [
+          "Intelligibility and severity metrics for dysarthria, Parkinson’s disease, and cleft lip–palate speech",
+           "Automated acoustic–phonetic feature extraction for early and accurate disorder detection",
+          "Reliable performance across different recording conditions and speakers"
+        ]
+      }
+
+
+      // You can add a 7th (or more) area like this:
+      // ,{
+      //   title: "Wearable Sensing & mHealth",
+      //   desc: "Continuous monitoring using consumer-grade devices with clinical-grade analytics.",
+      //   items: ["Artifact-robust pipelines", "Longitudinal trend detection", "Edge deployment"]
+      // }
+    ];
+    // ===========================================================
+
+    // Renders the grid based on the 'areas' array above.
+    (function renderAreas() {
+      const grid = document.getElementById('areasGrid');
+      const makeCard = ({ title, desc, items }) => {
+        const li = items.map(txt => `<li>${txt}</li>`).join("");
+        return `
+          <div style="border:1.5px solid #003366; border-radius:10px; padding:16px; background:#fff;">
+            <h3 style="margin:6px 0 8px; font-size:18px;">${title}</h3>
+            <p style="margin:6px 0 10px; font-size:15px;">${desc}</p>
+            <ul style="margin:0 0 6px 18px; padding:0;">${li}</ul>
+          </div>
+        `;
+      };
+      grid.innerHTML = areas.map(makeCard).join("");
+    })();
+  </script>
+</body>
+</html>
